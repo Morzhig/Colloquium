@@ -1,17 +1,21 @@
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import Strings.ConcatenationFacade;
+import Strings.Str;
+
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
-        Scanner in = new Scanner(new FileReader("input.txt"));
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
 
-        String s1 = in.nextLine();
+        String s1, s2;
 
-        System.out.println("Do you have string and string(1) or string and number(2)");
+        System.out.println("Enter first string.");
+        s1 = in.next();
 
-        String s2 = in.nextLine();
+        System.out.println("Enter second string.");
+        s2 = in.next();
 
-        int n  = in.nextInt();
+        Str s = new Str(s1, s2);
+        System.out.println(new ConcatenationFacade().Concatenation(s));
     }
 }
